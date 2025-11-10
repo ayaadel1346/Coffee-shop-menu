@@ -35,7 +35,7 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
       role="group"
       aria-label="Language switcher"
     >
-      <FaGlobe className="text-gray-600 mr-2" size={18} aria-hidden="true" />
+      <FaGlobe className="text-gray-600 mx-1" size={18} aria-hidden="true" />
 
       <span
         id="current-language"
@@ -48,7 +48,7 @@ const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({
       </span>
 
       <svg
-        className="w-4 h-4 text-primary ml-2"
+        className="w-4 h-4 text-primary mx-1"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

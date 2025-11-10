@@ -10,7 +10,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import MobileNav from "./MobileNav";
 
 export default function Navbar() {
-  const t = useTranslations("Homepage.navbar");
+  const t = useTranslations("Homepage.Navbar");
   const locale = useLocale();
   const pathname = usePathname();
   const cleanPathname = pathname.replace(new RegExp(`^/${locale}`), "") || "/";
@@ -27,7 +27,7 @@ export default function Navbar() {
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 flex flex-col border-b-2 border-secondary bg-background z-50 px-6 md:px-20 py-4">
+    <header className="sticky top-0 flex flex-col border-b border-secondary bg-background z-50 px-6 md:px-20 py-4">
       <div className="flex justify-between items-center w-full">
         <CustomImage
           src="/logo.png"

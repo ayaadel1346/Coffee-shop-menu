@@ -1,18 +1,26 @@
 {
   "Homepage": {
-    "navbar": {
+    "Navbar": {
       "home": "Home",
       "menu": "Menu",
       "contact_us": "Contact Us",
       "about_us": "About Us"
     },
-    "herosec": {
+    "HeroSec": {
       "first_title": "We made great coffee",
       "second_title": "for our guests"
     },
     "WelcomeSec": {
       "title": "Welcome to our coffee house",
       "description": "From a cultural standpoint, coffeehouses largely serve as centers of social interaction: the coffeehouse provides patrons with a place to congregate, talk, read, write, entertain one another, or pass the time, whether individually or in small groups."
+    },
+    "DelightSec": {
+      "heading": {
+        "line1": "the",
+        "line2": "experience",
+        "line3": "sweet delight"
+      },
+      "description": "The coffee is brewed by first roasting the green coffee beans over hot coals in a brazier. Once the beans are roasted, each participant is given an opportunity to sample the aromatic smoke by wafting it towards them. This is followed by the grinding."
     }
   }
 }

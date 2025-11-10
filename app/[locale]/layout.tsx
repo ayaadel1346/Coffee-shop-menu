@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { NextIntlClientProvider } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import "../globals.css";
-import { cookies } from "next/headers";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +25,18 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
-  const locale = (await cookies()).get("locale")?.value || "en";
-  const dir = locale === "ar" ? "rtl" : "ltr";
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
-    <html lang={locale} dir={dir}>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
