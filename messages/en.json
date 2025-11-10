@@ -1,0 +1,18 @@
+{
+  "Homepage": {
+    "navbar": {
+      "home": "Home",
+      "menu": "Menu",
+      "contact_us": "Contact Us",
+      "about_us": "About Us"
+    },
+    "herosec": {
+      "first_title": "We made great coffee",
+      "second_title": "for our guests"
+    },
+    "WelcomeSec": {
+      "title": "Welcome to our coffee house",
+      "description": "From a cultural standpoint, coffeehouses largely serve as centers of social interaction: the coffeehouse provides patrons with a place to congregate, talk, read, write, entertain one another, or pass the time, whether individually or in small groups."
+    }
+  }
+}

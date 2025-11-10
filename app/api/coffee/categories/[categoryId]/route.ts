@@ -3,7 +3,7 @@ import { coffeeData } from "../../route";
 
 export async function GET(
   request: Request,
-  { params }: { params: { categoryId: string } }
+  { params }: { params: { categoryId: string } },
 ) {
   const categoryId = Number(params.categoryId);
   const coffees = coffeeData.filter((item) => item.categoryId === categoryId);
@@ -16,7 +16,7 @@ export async function GET(
           ar: "لا توجد قهوة لهذه الفئة",
         },
       },
-      { status: 404 }
+      { status: 404 },
     );
   }
 

@@ -6,8 +6,10 @@ const coffeeCategories = [
     name_en: "Espresso-Based",
     name_ar: "قهوة الإسبريسو",
     image: "https://images.unsplash.com/photo-1511920170033-f8396924c348",
-    description_en: "Rich espresso-based drinks like cappuccino, latte, and macchiato.",
-    description_ar: "مشروبات تعتمد على الإسبريسو مثل الكابتشينو واللاتيه والماكياتو.",
+    description_en:
+      "Rich espresso-based drinks like cappuccino, latte, and macchiato.",
+    description_ar:
+      "مشروبات تعتمد على الإسبريسو مثل الكابتشينو واللاتيه والماكياتو.",
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ const coffeeCategories = [
     name_en: "Specialty Coffee",
     name_ar: "القهوة المختصة",
     image: "https://images.unsplash.com/photo-1579992344076-3befd40fd17a",
-    description_en: "High-quality coffees with unique flavors and brewing methods.",
+    description_en:
+      "High-quality coffees with unique flavors and brewing methods.",
     description_ar: "قهوة عالية الجودة بنكهات فريدة وطرق تحضير خاصة.",
   },
   {

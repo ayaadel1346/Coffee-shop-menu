@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Coffee Shop Menu — Front-end Focused Project
 
 ## Project Overview
@@ -271,3 +272,8 @@ If you want, I can:
 
 ---
 
+=======
+# Coffee-shop-menu
+
+Coffee shop menu
+>>>>>>> Stashed changes
