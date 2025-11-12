@@ -5,12 +5,12 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import CustomImage from "../CustomImage";
+import CustomImage from "../templates/CustomImage";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileNav from "./MobileNav";
 
 export default function Navbar() {
-  const t = useTranslations("Homepage.Navbar");
+  const t = useTranslations("Homepage.navbar");
   const locale = useLocale();
   const pathname = usePathname();
   const cleanPathname = pathname.replace(new RegExp(`^/${locale}`), "") || "/";

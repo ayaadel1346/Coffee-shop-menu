@@ -2,12 +2,12 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import CustomImage from "../../CustomImage";
+import CustomImage from "../../templates/CustomImage";
 import { useTranslations } from "next-intl";
 import styles from "./DelightSec.module.css";
 
 export default function DelightSec() {
-  const t = useTranslations("Homepage.DelightSec");
+  const t = useTranslations("Homepage.delightSec");
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -15,7 +15,7 @@ export default function DelightSec() {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -200]);
+  const y = useTransform(scrollYProgress, [0, 1], [150, -400]);
 
   return (
     <div

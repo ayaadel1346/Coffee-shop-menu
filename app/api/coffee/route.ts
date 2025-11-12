@@ -188,6 +188,15 @@ export const coffeeData = [
   },
 ];
 
-export async function GET() {
-  return NextResponse.json(coffeeData);
+export async function GET(request: Request) {
+  const locale = request.headers.get("accept-language") || "en";
+  const localizedData = coffeeData.map((coffee) => ({
+    ...coffee,
+    name: locale === "ar" ? coffee.name.ar : coffee.name.en,
+    description:
+      locale === "ar" ? coffee.description.ar : coffee.description.en,
+    origin: locale === "ar" ? coffee.origin.ar : coffee.origin.en,
+  }));
+
+  return NextResponse.json(localizedData);
 }

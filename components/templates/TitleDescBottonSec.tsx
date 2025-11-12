@@ -1,6 +1,7 @@
 interface TitleDescButtonSecProps {
   title: string;
-  description: string;
+  description?: string;
+  quote?: string;
   buttonLabel?: string;
   onButtonClick?: () => void;
 }
@@ -8,6 +9,7 @@ interface TitleDescButtonSecProps {
 export default function TitleDescButtonSec({
   title,
   description,
+  quote,
   buttonLabel,
   onButtonClick,
 }: TitleDescButtonSecProps) {
@@ -25,17 +27,37 @@ export default function TitleDescButtonSec({
         {title}
       </h2>
 
-      <p
-        data-testid="section-description"
-        className="text-secondary text-[16px] md:text-[18px] leading-5 md:leading-[30px] mb-6"
-      >
-        {description}
-      </p>
+      {quote ? (
+        <blockquote
+          data-testid="section-quote"
+          className="text-secondary text-[16px] md:text-[18px] leading-5 md:leading-[30px] mb-6"
+        >
+          {quote}
+        </blockquote>
+      ) : description ? (
+        <p
+          data-testid="section-description"
+          className="text-secondary text-[16px] md:text-[18px] leading-5 md:leading-[30px] mb-6"
+        >
+          {description}
+        </p>
+      ) : null}
 
       {buttonLabel && (
         <button
           onClick={onButtonClick}
-          className="bg-primary text-white text-[16px] font-semibold py-2 px-6 rounded-full hover:bg-[#e0b56f] transition-all duration-300"
+          className="
+            relative cursor-pointer 
+           text-[16px] md:text-[18px] font-bold text-active-link 
+            border-2 border-accent 
+            py-4 px-6 my-5 
+            transition-all duration-300 ease-in-out 
+            hover:text-primary hover:border-primary 
+            
+            after:content-[''] after:absolute after:top-[7%] after:left-[3.5%] 
+            after:w-full after:h-full after:border-2 after:border-accent-light 
+            hover:after:border-primary after:-z-10
+          "
         >
           {buttonLabel}
         </button>
