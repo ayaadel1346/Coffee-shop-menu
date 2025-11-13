@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --footer-bg-color: rgb(33, 31, 30);
 
   --color-primary: #453e3c;
   --color-secondary: #6a6867;
@@ -15,7 +16,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
+  --color-footer-bg-color: var(--footer-bg-color);
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-accent: var(--color-accent);

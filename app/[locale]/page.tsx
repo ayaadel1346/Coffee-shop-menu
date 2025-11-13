@@ -1,6 +1,7 @@
 import CategorySec from "@/components/homepage/category-sec/CategorySec";
 import DelightSec from "@/components/homepage/DelightSec/DelightSec";
 import HeroSec from "@/components/homepage/HeroSec";
+import LifeBegin from "@/components/homepage/LifeBegin/LifeBegin";
 import LoadingCategories from "@/components/loaders/loading-categories/LoadingCategories";
 import TitleDescBottonSec from "@/components/templates/TitleDescBottonSec";
 import { useTranslations } from "next-intl";
@@ -25,6 +26,8 @@ export default function Home() {
       <Suspense fallback={<LoadingCategories />}>
         <CategorySec />
       </Suspense>
+
+      <LifeBegin />
     </>
   );
 }

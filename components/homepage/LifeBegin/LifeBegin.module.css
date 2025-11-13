@@ -1,0 +1,32 @@
+#life-begin-container {
+  position: relative;
+  background-image: url("/home/bg_home_alter.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#life-begin-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#life-begin-container::after {
+  content: "";
+  position: absolute;
+  background-image: url("/home/coffee-pot.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  z-index: 2;
+}

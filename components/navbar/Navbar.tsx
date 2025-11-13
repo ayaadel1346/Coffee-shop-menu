@@ -35,7 +35,6 @@ export default function Navbar() {
           width={128}
           height={128}
           preload={true}
-          srcSet={[{ src: "/logo.png", type: "image/webp" }]}
           className="w-24 h-24 md:w-32 md:h-[124px] rounded-full object-cover"
         />
 

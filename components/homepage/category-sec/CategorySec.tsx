@@ -13,7 +13,7 @@ export default function CategorySec() {
   return (
     <div className="relative w-full min-h-[60vh]">
       <CustomImage
-        src="/home/bg_04.jpg"
+        src="/home/category_bg.jpeg"
         alt="Hero background showing coffee"
         preload={false}
         objectFit="cover"
