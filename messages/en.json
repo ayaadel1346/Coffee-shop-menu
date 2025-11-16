@@ -4,7 +4,8 @@
       "home": "Home",
       "menu": "Menu",
       "contact_us": "Contact Us",
-      "about_us": "About Us"
+      "about_us": "About Us",
+      "category": "Category"
     },
     "heroSec": {
       "first_title": "We made great coffee",
@@ -40,5 +41,9 @@
     "rights": "CafféLine. All Rights Reserved.",
     "terms": "Terms of Use",
     "privacy": "Privacy Policy"
+  },
+  "CoffeeCard": {
+    "price": "Price",
+    "origin": "Origin"
   }
 }

@@ -1,8 +1,8 @@
 import CustomImage from "../../templates/CustomImage";
 import { use } from "react";
-import { fetchCategories } from "@/lib/category";
 import { useLocale } from "next-intl";
 import Link from "next/link";
+import { fetchCategories } from "@/lib/category";
 
 export default function CategorySec() {
   const locale = useLocale();
@@ -26,7 +26,10 @@ export default function CategorySec() {
       >
         {categories.map((category) => (
           <Link
-            href="/"
+            href={{
+              pathname: `/category/${category.id}`,
+              query: { name: category.name },
+            }}
             key={category.id}
             className="group"
             aria-label={`View ${category.name} category page`}
