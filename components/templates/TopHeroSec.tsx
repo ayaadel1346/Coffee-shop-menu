@@ -1,9 +1,22 @@
 import AutoBreadcrumb from "../AutoBreadcrumb";
 import CustomImage from "./CustomImage";
 
-export default function TopHeroSec({ title ,imageSrc }: { title: string ,imageSrc:string }) {
+export default function TopHeroSec({
+  title,
+  imageSrc,
+}: {
+  title: string;
+  imageSrc: string;
+}) {
   return (
-    <div className="relative h-[35vh] w-full flex flex-col justify-center items-center">
+    <div
+      className="
+        relative h-[35vh] w-full flex flex-col justify-center items-center overflow-hidden
+        after:content-[''] after:absolute after:bottom-0 after:left-0
+        after:h-0.5 after:w-[30%] after:bg-accent
+        after:animate-[slide-horizontal_3s_linear_infinite]
+      "
+    >
       <CustomImage
         src={imageSrc}
         alt="Hero background"

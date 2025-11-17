@@ -26,7 +26,8 @@ export async function GET(
   const localizedCoffees = coffees.map((coffee) => ({
     ...coffee,
     name: locale === "ar" ? coffee.name.ar : coffee.name.en,
-    description: locale === "ar" ? coffee.description.ar : coffee.description.en,
+    description:
+      locale === "ar" ? coffee.description.ar : coffee.description.en,
     origin: locale === "ar" ? coffee.origin.ar : coffee.origin.en,
   }));
 

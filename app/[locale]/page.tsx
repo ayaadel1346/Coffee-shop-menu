@@ -1,4 +1,5 @@
 import CategorySec from "@/components/homepage/category-sec/CategorySec";
+import CoffeeMenu from "@/components/homepage/CoffeeMenu";
 import DelightSec from "@/components/homepage/DelightSec/DelightSec";
 import HeroSec from "@/components/homepage/HeroSec";
 import LifeBegin from "@/components/homepage/LifeBegin/LifeBegin";
@@ -9,7 +10,6 @@ import { Suspense } from "react";
 
 export default function Home() {
   const tWelcome = useTranslations("Homepage.welcomeSec");
-  const tCoffeeMenu = useTranslations("Homepage.coffeeMenu");
   return (
     <>
       <HeroSec />
@@ -18,11 +18,7 @@ export default function Home() {
         description={tWelcome("description")}
       />
       <DelightSec />
-      <TitleDescBottonSec
-        title={tCoffeeMenu("title")}
-        quote={tCoffeeMenu("description")}
-        buttonLabel={tCoffeeMenu("buttonLabel")}
-      />
+      <CoffeeMenu />
       <Suspense fallback={<LoadingCategories />}>
         <CategorySec />
       </Suspense>

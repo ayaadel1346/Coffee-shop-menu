@@ -22,7 +22,7 @@ export default async function Category({
 }: {
   params: Promise<{ categoryId?: string }>;
 }) {
-  const categoryId = (await params).categoryId?? "";;
+  const categoryId = (await params).categoryId ?? "";
   return (
     <>
       <HeroSec />

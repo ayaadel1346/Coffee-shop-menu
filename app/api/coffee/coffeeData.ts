@@ -235,7 +235,8 @@ export const coffeeData = [
     origin: { en: "Italy", ar: "إيطاليا" },
     categoryId: 1,
     price: 3.2,
-    image: "https://images.unsplash.com/photo-1522922235461-912955b0772b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UmlzdHJldHRvfGVufDB8fDB8fHww",
+    image:
+      "https://images.unsplash.com/photo-1522922235461-912955b0772b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UmlzdHJldHRvfGVufDB8fDB8fHww",
   },
 
   {

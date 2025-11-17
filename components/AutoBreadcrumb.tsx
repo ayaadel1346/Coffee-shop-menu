@@ -20,8 +20,7 @@ export default function AutoBreadcrumb() {
     const href = "/" + segments.slice(0, index + 1).join("/");
     const label = !isNaN(Number(seg)) ? seg : t(seg) || seg;
 
-    const isPlainText =
-      firstNumberIndex > 0 && index === firstNumberIndex - 1;
+    const isPlainText = firstNumberIndex > 0 && index === firstNumberIndex - 1;
 
     return { label, href, isPlainText };
   });

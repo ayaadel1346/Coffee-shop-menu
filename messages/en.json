@@ -4,7 +4,7 @@
       "home": "Home",
       "menu": "Menu",
       "contact_us": "Contact Us",
-      "about_us": "About Us",
+      "about": "About Us",
       "category": "Category"
     },
     "heroSec": {
@@ -45,5 +45,25 @@
   "CoffeeCard": {
     "price": "Price",
     "origin": "Origin"
+  },
+  "ErrorPage": {
+    "oops": "Oops! Something went wrong.",
+    "tryAgain": "Try Again",
+    "resetting": "Resetting..."
+  },
+  "AboutPage": {
+    "title": "About CafféLine",
+    "subtitle": "Our Story",
+    "description": "CafféLine started with a passion for the finest coffee and a vision to create a cozy space where everyone can enjoy their favorite brew. From sourcing the best beans to crafting unique flavors, we dedicate ourselves to delivering an exceptional coffee experience.",
+    "missionTitle": "Our Mission",
+    "missionText": "To bring the highest quality coffee to our community while maintaining sustainability and ethical sourcing.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be the most loved coffee destination where quality, taste, and experience come together.",
+    "teamTitle": "Meet Our Team",
+    "teamText": "Our baristas and staff are passionate coffee lovers, trained to craft your perfect cup every time."
+  },
+  "Pagination": {
+    "back": "Back",
+    "next": "Next"
   }
 }

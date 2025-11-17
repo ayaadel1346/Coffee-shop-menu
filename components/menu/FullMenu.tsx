@@ -1,17 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import CoffeeCard from "../templates/CoffeeCard";
 import { fetchFullMenu } from "@/lib/getFullMenu";
 import { Coffee } from "@/types";
 
 export default function FullMenu() {
   const locale = useLocale();
+  const t = useTranslations("Pagination");
   const size = 9;
 
   const [page, setPage] = useState(1);
-  const [menu, setMenu] = useState<{ data: Coffee[]; total: number; totalPages: number } | null>(null);
+  const [menu, setMenu] = useState<{
+    data: Coffee[];
+    total: number;
+    totalPages: number;
+  } | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -47,7 +52,9 @@ export default function FullMenu() {
   return (
     <div className="flex flex-col justify-center items-center px-7 py-11 min-h-[40vh]">
       {menu && menu.data.length === 0 && (
-        <p className="mt-10 text-center text-lg text-primary">No products available.</p>
+        <p className="mt-10 text-center text-lg text-primary">
+          No products available.
+        </p>
       )}
 
       {menu && menu.data.length > 0 && (
@@ -69,13 +76,10 @@ export default function FullMenu() {
               aria-label="Go to previous page"
               className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
             >
-              Back
+              {t("back")}
             </button>
 
-            <span
-              className="px-4 py-2 rounded bg-gray-100"
-              aria-current="page"
-            >
+            <span className="px-4 py-2 rounded bg-gray-100" aria-current="page">
               Page {page} of {menu.totalPages}
             </span>
 
@@ -85,7 +89,7 @@ export default function FullMenu() {
               aria-label="Go to next page"
               className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
             >
-              Next
+              {t("next")}
             </button>
           </nav>
         </>
