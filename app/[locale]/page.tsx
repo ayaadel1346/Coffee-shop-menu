@@ -1,6 +1,7 @@
 import CategorySec from "@/components/homepage/category-sec/CategorySec";
 import CoffeeMenu from "@/components/homepage/CoffeeMenu";
 import DelightSec from "@/components/homepage/DelightSec/DelightSec";
+import Drinks from "@/components/homepage/drinks/Drinks";
 import HeroSec from "@/components/homepage/HeroSec";
 import LifeBegin from "@/components/homepage/LifeBegin/LifeBegin";
 import LoadingCategories from "@/components/loaders/loading-categories/LoadingCategories";
@@ -22,7 +23,7 @@ export default function Home() {
       <Suspense fallback={<LoadingCategories />}>
         <CategorySec />
       </Suspense>
-
+      <Drinks />
       <LifeBegin />
     </>
   );

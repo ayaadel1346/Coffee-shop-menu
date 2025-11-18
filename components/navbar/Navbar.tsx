@@ -21,7 +21,7 @@ export default function Navbar() {
     { href: "/", label: t("home") },
     { href: "/menu", label: t("menu") },
     { href: "/about", label: t("about") },
-    { href: "/contact", label: t("contact_us") },
+    { href: "/contact", label: t("contact") },
   ];
 
   const handleLinkClick = () => setMenuOpen(false);

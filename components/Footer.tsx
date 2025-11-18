@@ -67,7 +67,7 @@ export default function Footer() {
         </p>
 
         <Link
-          href="/terms"
+          href="/"
           aria-label="Read Terms of Use"
           className="transition-all duration-300 ease-in-out hover:text-accent-light"
         >
@@ -77,7 +77,7 @@ export default function Footer() {
         <span aria-hidden="true">•</span>
 
         <Link
-          href="/privacy"
+          href="/"
           aria-label="Read Privacy Policy"
           className="transition-all duration-300 ease-in-out hover:text-accent-light"
         >
