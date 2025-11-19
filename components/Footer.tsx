@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CustomImage from "./templates/CustomImage";
+import CustomImage from "./core/CustomImage";
 import { useTranslations } from "next-intl";
 
 export default function Footer() {

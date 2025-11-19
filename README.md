@@ -6,7 +6,7 @@
 
 **Coffee-shop-menu-front-end-focused-project** is a front-end application that presents a beautiful, accessible, and responsive menu for a coffee shop. It focuses on UI/UX, component reusability, performance, and accessibility while being easy to integrate with any backend API.
 
-This document explains goals, features, architecture, components, design tokens, data shape, development workflow, testing, and deployment suggestions.
+This document explains goals, features, architecture, components, design tokens, data shape, development workflow.
 
 ---
 
@@ -25,211 +25,204 @@ This document explains goals, features, architecture, components, design tokens,
 
 - Front-end developers building a restaurant/coffee shop site.
 - Designers looking for a coded reference of a menu system.
-- Product owners who want a modern, accessible menu experience.
 
 ---
 
-## Key Features
+## Tech Stack 
 
-- Menu categories (Hot Drinks, Cold Drinks, Food, Snacks, Add-ons)
-- Search and filter (by name, tag, price range)
-- Item detail modal / drawer with photos, description, variants (sizes), and prices
-- Favorites / save items locally (localStorage) for quick order
-- Responsive grid/list views
-- Accessible keyboard navigation and ARIA labels
-- Lightweight animations (fade/slide) for interactions
-- Dark mode support
-
----
-
-## Tech Stack (recommended)
-
-- **Framework**: React (or Next.js if you want SSR/SSG)
-- **Bundler**: Vite (for React SPA) or Next.js (app/router)
+- **Framework**: React , Next.js;
+- **Bundler**: Next.js (app/router)
 - **Styling**: Tailwind CSS (utility-first) + CSS variables for design tokens
-- **State**: React Context + useReducer for local app state; Redux Toolkit optional for larger apps
-- **Routing**: React Router (or Next.js routes)
 - **Images**: responsive `srcset` and `sizes`, optionally `next/image` for Next.js
-- **Icons**: lucide-react or react-icons
+- **Icons**:  react-icons
 - **Testing**: Jest + React Testing Library; MSW for API mocking
-- **Lint & Formatting**: ESLint + Prettier + TypeScript (recommended)
+- **Lint & Formatting**: ESLint + Prettier + TypeScript 
 
 ---
 
-## Design tokens (example)
+## Design tokens 
 
 ```css
 :root {
-  --bg: #0f1724; /* dark bg */
-  --surface: #111827;
-  --muted: #94a3b8;
-  --accent: #ecb881; /* warm coffee accent */
-  --accent-2: #ffd28d;
-  --text: #e6eef5;
-  --radius: 12px;
+  --background: #ffffff;
+  --foreground: #171717;
+  --footer-bg-color: rgb(33, 31, 30);
+
+  --color-primary: #453e3c;
+  --color-secondary: #6a6867;
+  --color-accent: #009f3b;
+  --color-accent-light: #4b9d69;
+  --color-accent-2: #ecb881;
+  --color-active-link: #007a2c;
 }
 ```
-
-Tailwind can be extended to include these tokens in `tailwind.config.js`.
-
 ---
 
-## Folder structure (suggested)
+## components Folder structure
 
 ```
-src/
+
 ├─ components/
-│  ├─ Menu/
-│  │  ├─ MenuList.tsx
-│  │  ├─ MenuItemCard.tsx
-│  │  ├─ MenuItemDetailDrawer.tsx
-│  │  └─ CategoryTabs.tsx
-│  ├─ UI/
-│  │  ├─ Button.tsx
-│  │  ├─ Icon.tsx
-│  │  └─ Modal.tsx
-│  └─ Layout/
-│     ├─ Header.tsx
-│     └─ Footer.tsx
-├─ hooks/
-│  └─ useFavorites.ts
-├─ pages/ (or app/ for Next)
-│  └─ index.tsx
-├─ styles/
-│  └─ globals.css
-├─ data/
-│  └─ menu.json
-└─ utils/
-   └─ formatPrice.ts
+│  ├─ about/
+│  │  ├─ Herosec.tsx
+│  │  └─ MainPage.tsx
+│  ├─ contact/
+│  │  ├─ Herosec.tsx
+│  │  └─ MainPage.tsx
+│  └─ homepage/
+│     ├─ category-sec/
+│     │  └─CategorySec.tsx
+│     ├─ delight-sec
+│     │  ├─ DelightSec.module.css
+│     │  └─ DelightSec.tsx
+│     ├─ drinks/
+│     │  └─ Drinks.tsx
+│     ├─ life-begin/
+│     │  ├─ LifeBegin.module.css
+│     │  └─ LifeBegin.tsx
+│     ├─CoffeeMenu.tsx
+│     └─ HeroSec.tsx
+│     
+├─ loaders/
+│  ├─ loading-categories/
+│  │   ├─ LoadingCategories.module.css
+│  │   └─ LoadingCategories.tsx
+│  │
+│  └─ main-loader/
+│     ├─ MainLoader.module.css
+│     └─ MainLoader.tsx
+├─ menu/
+│  ├─ FullMenu.tsx
+│  └─ Herosec.tsx
+│
+├─ menu-by-category/
+│  ├─ MenuByCategory.tsx
+│  └─ Herosec.tsx
+│
+├─ navbar/
+│  ├─ LocaleSwitcher.tsx
+│  ├─ MobileNav.tsx
+│  └─ Navbar.tsx
+├─ core/
+│  ├─ CoffeeCard.tsx
+│  ├─ CustomImage.tsx
+│  ├─ TitleDescButtonSec.tsx
+│  └─ TopHeroSec.tsx
+│
+├─ AutoBreadcrumb.tsx
+└─Footer.tsx
 ```
 
 ---
 
-## Example data shape
+## Utility Components Design (Props & Behavior)
 
-```json
-{
-  "categories": [
-    {
-      "id": "hot",
-      "name": "Hot Drinks",
-      "items": [
-        {
-          "id": "latte-001",
-          "name": "Caffè Latte",
-          "description": "Espresso with steamed milk and a light layer of foam.",
-          "image": "/images/latte.jpg",
-          "tags": ["milk", "espresso"],
-          "variants": [
-            { "size": "S", "price": 2.5 },
-            { "size": "M", "price": 3.0 },
-            { "size": "L", "price": 3.5 }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
+### TopHeroSec
+
+**Imports:**
+
+* `AutoBreadcrumb`
+* `CustomImage`
+
+**Props:**
+
+* `title: string` – Main heading text.
+* `imageSrc: string` – Background hero image.
+
+**Behavior:**
+
+* Renders a hero section with a background image.
+* Uses `CustomImage` with `preload` enabled for performance.
+* Displays a title centered vertically.
+* Renders automatic breadcrumbs below the title.
+* Includes animated accent underline using Tailwind and pseudo-elements.
 
 ---
 
-## Component design (props & behavior)
+### TitleDescButtonSec
 
-### `MenuItemCard` (stateless)
+**Props:**
 
-Props:
+* `title: string` – Section title.
+* `description?: string` – Optional paragraph text.
+* `quote?: string` – Optional quote (renders instead of description).
+* `buttonLabel?: string` – Optional button label.
+* `onButtonClick?: () => void` – Optional click handler.
 
-- `item` — menu item object
-- `onOpen` — callback to open detail drawer
-- `isFavorited` — boolean
-- `onToggleFavorite` — callback
+**Behavior:**
 
-Behavior:
+* Displays a centered section containing title + description or quote.
+* If both `quote` and `description` exist, **quote takes priority**.
+* Renders a styled accent button if `buttonLabel` is provided.
+* Button includes hover animation using Tailwind pseudo-elements.
 
-- Render thumbnail, name, short description, price range
-- Click opens detail drawer (or navigates to item route)
-- Keyboard accessible (Enter to open)
+---
 
-### `MenuItemDetailDrawer`
+### CustomImage
 
-Props:
+**Props:**
 
-- `item`
-- `open` boolean
-- `onClose` function
+* `src: string`
+* `alt: string`
+* `width?: number`
+* `height?: number`
+* `blurDataURL?: string`
+* `preload?: boolean`
+* `fetchPriority?: "high" | "low" | "auto"`
+* `sizes?: string`
+* `className?: string`
+* `srcSet?: SrcSetEntry[]`
+* `objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down"`
 
-Behavior:
+**Behavior:**
 
-- Show large image, description, variants, add-to-cart button
-- Trap focus while open (use `focus-trap-react` or own implementation)
-- Use `aria-modal` and `role="dialog"` with accessible label
+* Wraps Next.js `<Image />` with `<picture>` to enable custom responsive sources.
+* If no width/height is provided → component uses `fill` mode.
+* Supports blur placeholder.
+* Allows manually controlling `preload` and `fetchPriority` (should not combine with Next.js `priority`).
+* Supports advanced responsive loading via `srcSet`.
+
+---
+
+### CoffeeCard
+
+**Props:**
+
+* `coffee: Coffee` – Object containing:
+
+  * `name`
+  * `image`
+  * `description`
+  * `origin`
+  * `price`
+
+**Behavior:**
+
+* Displays a coffee card with image + details.
+* Uses `CustomImage` with `objectFit="cover"`.
+* Accessible: card uses semantic roles and aria-labels.
 
 ---
 
 ## Accessibility checklist
 
 - Semantic HTML (`<nav>`, `<main>`, `<ul>`, `<button>`, `<form>`)
-- Focus states on interactive elements
 - Keyboard support (tab navigation, Enter/Space for activation)
 - ARIA attributes: `aria-label`, `aria-describedby` for menus and dialogs
 - Images with `alt` text
-- Color contrast >= 4.5:1 for body text; use tools to verify
-- Skip-to-content link for keyboard users
-
 ---
 
 ## Responsiveness & Layout
 
-- Mobile-first CSS
-- Small screens: single column list, large touch targets
-- Larger screens: multi-column grid (2–4 columns depending on width)
+- Small screens: single column list
+- Larger screens: multi-column grid (3–4 columns depending on width)
 - Breakpoints example: sm 640px, md 768px, lg 1024px, xl 1280px
-- Use CSS Grid for menu layout and flexbox for cards
-
 ---
 
-## State & Data Flow
-
-- Data source: fetch from `/api/menu` or load `public/menu.json` in demo mode
-- Local UI state: selected category, search query, filters, active item
-- Persist favorites in `localStorage` with a hook `useFavorites`
-- Cart state if added: simple context with `useReducer`
-
----
-
-## Performance considerations
-
-- Code-split route-level or heavy components (item detail) using `React.lazy`
-- Lazy-load images (native `loading="lazy"`)
-- Use compressed images and `srcset`
-- Keep bundle small: avoid heavy UI libraries if not needed
-
----
-
-## Testing recommendations
-
-- Unit tests for components with React Testing Library
-- Accessibility tests with `axe` or `jest-axe`
-- Integration tests for core flows (search, open detail, favorite)
-- MSW (Mock Service Worker) for API mocking during tests
-
----
-
-## Example UI interactions & UX notes
-
-- When a user hovers or focuses a `MenuItemCard`, slightly lift card and show quick-add button
-- On item open, show a drawer from the right on desktop and full-screen modal on mobile
-- Use subtle micro-interactions for adding favorites (small heart animation)
-- Provide a compact view toggle to switch between image-rich and compact list
-
----
 
 ## Deployment
 
-- Static hosting: Vercel, Netlify (for Next or Vite builds)
-- CI: GitHub Actions running lint, build, tests
-- Environment: expose `REACT_APP_API_URL` or similar for backend
+- Static hosting: Vercel(for Next)
 
 ---
 
@@ -256,27 +249,9 @@ A responsive, accessible front-end app for a coffee shop menu built with React a
 
 ---
 
-## Next steps & extensions
 
-- Add cart + checkout integration
-- Add CMS or headless backend (Sanity, Strapi) for dynamic content
-- Add localization (i18n) and currency formatting
-- Analytics for popular items
-
----
-
-If you want, I can:
-
-- Generate component boilerplate (React + Tailwind) for the main components.
-- Create example `menu.json` with many realistic items for testing.
-- Produce accessibility audit notes for your current UI.
-
----
 
 =======
 
 # Coffee-shop-menu
 
-Coffee shop menu
-
-> > > > > > > Stashed changes

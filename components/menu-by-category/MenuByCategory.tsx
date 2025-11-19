@@ -1,7 +1,7 @@
 import { fetchCoffeeByCategories } from "@/lib/caffeeByCategory";
 import { useLocale } from "next-intl";
 import { use } from "react";
-import CoffeeCard from "../templates/CoffeeCard";
+import CoffeeCard from "../core/CoffeeCard";
 
 export default function MenuByCategory({ categoryId }: { categoryId: string }) {
   const locale = useLocale();

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import TitleDescBottonSec from "../templates/TitleDescBottonSec";
+import TitleDescBottonSec from "../core/TitleDescBottonSec";
 import { useRouter } from "next/navigation";
 
 export default function CoffeeMenu() {

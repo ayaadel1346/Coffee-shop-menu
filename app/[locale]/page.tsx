@@ -1,11 +1,11 @@
 import CategorySec from "@/components/homepage/category-sec/CategorySec";
 import CoffeeMenu from "@/components/homepage/CoffeeMenu";
-import DelightSec from "@/components/homepage/DelightSec/DelightSec";
+import DelightSec from "@/components/homepage/delight-sec/DelightSec";
 import Drinks from "@/components/homepage/drinks/Drinks";
 import HeroSec from "@/components/homepage/HeroSec";
-import LifeBegin from "@/components/homepage/LifeBegin/LifeBegin";
+import LifeBegin from "@/components/homepage/life-begin/LifeBegin";
 import LoadingCategories from "@/components/loaders/loading-categories/LoadingCategories";
-import TitleDescBottonSec from "@/components/templates/TitleDescBottonSec";
+import TitleDescBottonSec from "@/components/core/TitleDescBottonSec";
 import { useTranslations } from "next-intl";
 import { Suspense } from "react";
 

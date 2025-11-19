@@ -1,6 +1,6 @@
 "use client";
 
-import CustomImage from "@/components/templates/CustomImage";
+import CustomImage from "@/components/core/CustomImage";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";

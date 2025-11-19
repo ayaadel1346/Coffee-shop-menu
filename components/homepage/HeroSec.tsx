@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import CustomImage from "@/components/templates/CustomImage";
+import CustomImage from "@/components/core/CustomImage";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function HeroSec() {

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import CustomImage from "../templates/CustomImage";
+import CustomImage from "../core/CustomImage";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileNav from "./MobileNav";
 

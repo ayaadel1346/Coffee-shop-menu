@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import TopHeroSec from "../templates/TopHeroSec";
+import TopHeroSec from "../core/TopHeroSec";
 
 export default function HeroSec() {
   const t = useTranslations("AboutPage");

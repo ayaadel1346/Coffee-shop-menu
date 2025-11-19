@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import CoffeeCard from "../templates/CoffeeCard";
+import CoffeeCard from "../core/CoffeeCard";
 import { fetchFullMenu } from "@/lib/getFullMenu";
 import { Coffee } from "@/types";
 

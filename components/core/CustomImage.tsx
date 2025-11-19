@@ -28,7 +28,7 @@ export default function CustomImage({
   height,
   blurDataURL,
   preload = false,
-  fetchPriority,
+  fetchPriority="auto",
   sizes = "",
   className = "",
   srcSet = [],

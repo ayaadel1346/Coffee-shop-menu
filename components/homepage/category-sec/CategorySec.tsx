@@ -1,4 +1,4 @@
-import CustomImage from "../../templates/CustomImage";
+import CustomImage from "../../core/CustomImage";
 import { use } from "react";
 import { useLocale } from "next-intl";
 import Link from "next/link";

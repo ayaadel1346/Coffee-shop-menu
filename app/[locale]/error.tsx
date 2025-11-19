@@ -1,5 +1,5 @@
 "use client";
-import CustomImage from "@/components/templates/CustomImage";
+import CustomImage from "@/components/core/CustomImage";
 import { useTranslations } from "next-intl";
 import { useEffect, useTransition } from "react";
 

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import CustomImage from "../../templates/CustomImage";
+import CustomImage from "../../core/CustomImage";
 import { useTranslations } from "next-intl";
 import styles from "./DelightSec.module.css";
 
