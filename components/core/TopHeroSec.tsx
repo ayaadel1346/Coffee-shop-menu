@@ -21,6 +21,7 @@ export default function TopHeroSec({
         src={imageSrc}
         alt="Hero background"
         preload={true}
+        fetchPriority="high"
         className="absolute inset-0 -z-10"
         objectFit="cover"
       />

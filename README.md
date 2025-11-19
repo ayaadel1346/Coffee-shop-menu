@@ -28,19 +28,19 @@ This document explains goals, features, architecture, components, design tokens,
 
 ---
 
-## Tech Stack 
+## Tech Stack
 
 - **Framework**: React , Next.js;
 - **Bundler**: Next.js (app/router)
 - **Styling**: Tailwind CSS (utility-first) + CSS variables for design tokens
 - **Images**: responsive `srcset` and `sizes`, optionally `next/image` for Next.js
-- **Icons**:  react-icons
+- **Icons**: react-icons
 - **Testing**: Jest + React Testing Library; MSW for API mocking
-- **Lint & Formatting**: ESLint + Prettier + TypeScript 
+- **Lint & Formatting**: ESLint + Prettier + TypeScript
 
 ---
 
-## Design tokens 
+## Design tokens
 
 ```css
 :root {
@@ -56,6 +56,7 @@ This document explains goals, features, architecture, components, design tokens,
   --color-active-link: #007a2c;
 }
 ```
+
 ---
 
 ## components Folder structure
@@ -82,7 +83,7 @@ This document explains goals, features, architecture, components, design tokens,
 │     │  └─ LifeBegin.tsx
 │     ├─CoffeeMenu.tsx
 │     └─ HeroSec.tsx
-│     
+│
 ├─ loaders/
 │  ├─ loading-categories/
 │  │   ├─ LoadingCategories.module.css
@@ -121,21 +122,21 @@ This document explains goals, features, architecture, components, design tokens,
 
 **Imports:**
 
-* `AutoBreadcrumb`
-* `CustomImage`
+- `AutoBreadcrumb`
+- `CustomImage`
 
 **Props:**
 
-* `title: string` – Main heading text.
-* `imageSrc: string` – Background hero image.
+- `title: string` – Main heading text.
+- `imageSrc: string` – Background hero image.
 
 **Behavior:**
 
-* Renders a hero section with a background image.
-* Uses `CustomImage` with `preload` enabled for performance.
-* Displays a title centered vertically.
-* Renders automatic breadcrumbs below the title.
-* Includes animated accent underline using Tailwind and pseudo-elements.
+- Renders a hero section with a background image.
+- Uses `CustomImage` with `preload` enabled for performance.
+- Displays a title centered vertically.
+- Renders automatic breadcrumbs below the title.
+- Includes animated accent underline using Tailwind and pseudo-elements.
 
 ---
 
@@ -143,18 +144,18 @@ This document explains goals, features, architecture, components, design tokens,
 
 **Props:**
 
-* `title: string` – Section title.
-* `description?: string` – Optional paragraph text.
-* `quote?: string` – Optional quote (renders instead of description).
-* `buttonLabel?: string` – Optional button label.
-* `onButtonClick?: () => void` – Optional click handler.
+- `title: string` – Section title.
+- `description?: string` – Optional paragraph text.
+- `quote?: string` – Optional quote (renders instead of description).
+- `buttonLabel?: string` – Optional button label.
+- `onButtonClick?: () => void` – Optional click handler.
 
 **Behavior:**
 
-* Displays a centered section containing title + description or quote.
-* If both `quote` and `description` exist, **quote takes priority**.
-* Renders a styled accent button if `buttonLabel` is provided.
-* Button includes hover animation using Tailwind pseudo-elements.
+- Displays a centered section containing title + description or quote.
+- If both `quote` and `description` exist, **quote takes priority**.
+- Renders a styled accent button if `buttonLabel` is provided.
+- Button includes hover animation using Tailwind pseudo-elements.
 
 ---
 
@@ -162,25 +163,25 @@ This document explains goals, features, architecture, components, design tokens,
 
 **Props:**
 
-* `src: string`
-* `alt: string`
-* `width?: number`
-* `height?: number`
-* `blurDataURL?: string`
-* `preload?: boolean`
-* `fetchPriority?: "high" | "low" | "auto"`
-* `sizes?: string`
-* `className?: string`
-* `srcSet?: SrcSetEntry[]`
-* `objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down"`
+- `src: string`
+- `alt: string`
+- `width?: number`
+- `height?: number`
+- `blurDataURL?: string`
+- `preload?: boolean`
+- `fetchPriority?: "high" | "low" | "auto"`
+- `sizes?: string`
+- `className?: string`
+- `srcSet?: SrcSetEntry[]`
+- `objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down"`
 
 **Behavior:**
 
-* Wraps Next.js `<Image />` with `<picture>` to enable custom responsive sources.
-* If no width/height is provided → component uses `fill` mode.
-* Supports blur placeholder.
-* Allows manually controlling `preload` and `fetchPriority` (should not combine with Next.js `priority`).
-* Supports advanced responsive loading via `srcSet`.
+- Wraps Next.js `<Image />` with `<picture>` to enable custom responsive sources.
+- If no width/height is provided → component uses `fill` mode.
+- Supports blur placeholder.
+- Allows manually controlling `preload` and `fetchPriority` (should not combine with Next.js `priority`).
+- Supports advanced responsive loading via `srcSet`.
 
 ---
 
@@ -188,19 +189,18 @@ This document explains goals, features, architecture, components, design tokens,
 
 **Props:**
 
-* `coffee: Coffee` – Object containing:
-
-  * `name`
-  * `image`
-  * `description`
-  * `origin`
-  * `price`
+- `coffee: Coffee` – Object containing:
+  - `name`
+  - `image`
+  - `description`
+  - `origin`
+  - `price`
 
 **Behavior:**
 
-* Displays a coffee card with image + details.
-* Uses `CustomImage` with `objectFit="cover"`.
-* Accessible: card uses semantic roles and aria-labels.
+- Displays a coffee card with image + details.
+- Uses `CustomImage` with `objectFit="cover"`.
+- Accessible: card uses semantic roles and aria-labels.
 
 ---
 
@@ -210,6 +210,7 @@ This document explains goals, features, architecture, components, design tokens,
 - Keyboard support (tab navigation, Enter/Space for activation)
 - ARIA attributes: `aria-label`, `aria-describedby` for menus and dialogs
 - Images with `alt` text
+
 ---
 
 ## Responsiveness & Layout
@@ -217,8 +218,8 @@ This document explains goals, features, architecture, components, design tokens,
 - Small screens: single column list
 - Larger screens: multi-column grid (3–4 columns depending on width)
 - Breakpoints example: sm 640px, md 768px, lg 1024px, xl 1280px
----
 
+---
 
 ## Deployment
 
@@ -249,9 +250,6 @@ A responsive, accessible front-end app for a coffee shop menu built with React a
 
 ---
 
-
-
 =======
 
 # Coffee-shop-menu
-
