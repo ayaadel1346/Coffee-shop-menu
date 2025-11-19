@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
+
 export const metadata: Metadata = {
   title: "CafféLine",
   description:

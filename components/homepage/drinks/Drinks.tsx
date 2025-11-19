@@ -69,7 +69,7 @@ export default function Drinks() {
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: isRTL ? "100%" : "-100%", opacity: 0 }}
                   transition={{ type: "tween", duration: 1 }}
-                  className="relative w-[113px] h-[113px] md:w-[250px] md:h-[250px] lg:w-[35%] lg:h-[60%]"
+                  className="relative w-[113px] h-[113px] md:w-[250px] md:h-[250px] lg:w-[34%] lg:h-[75%]"
                 >
                   <CustomImage src={drink.image} alt={drink.title} />
                 </motion.div>

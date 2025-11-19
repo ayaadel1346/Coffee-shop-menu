@@ -3,6 +3,12 @@ import HeroSec from "@/components/menu-by-category/Herosec";
 import MenuByCategory from "@/components/menu-by-category/MenuByCategory";
 import { Suspense } from "react";
 
+export function generateStaticParams() {
+  return [1, 2, 3, 4, 5, 6].map((id) => ({
+    categoryId: id.toString(),
+  }));
+}
+
 export async function generateMetadata({
   searchParams,
 }: {
