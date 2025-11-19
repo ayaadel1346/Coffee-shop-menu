@@ -13,6 +13,8 @@ interface PreloadImageProps {
   height?: number;
   blurDataURL?: string;
   preload?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
+
   sizes?: string;
   className?: string;
   srcSet?: SrcSetEntry[];
@@ -26,6 +28,7 @@ export default function CustomImage({
   height,
   blurDataURL,
   preload = false,
+  fetchPriority,
   sizes = "",
   className = "",
   srcSet = [],
@@ -54,6 +57,7 @@ export default function CustomImage({
           blurDataURL={blurDataURL}
           sizes={sizes}
           preload={preload}
+          fetchPriority={fetchPriority}
           className={className}
         />
       ) : (
@@ -66,6 +70,7 @@ export default function CustomImage({
           blurDataURL={blurDataURL}
           sizes={sizes}
           preload={preload}
+          fetchPriority={fetchPriority}
           className={className}
         />
       )}

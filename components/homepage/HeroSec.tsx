@@ -39,6 +39,7 @@ export default function HeroSec() {
         src="/home/bg_main_slider.jpg"
         alt="Hero background showing coffee"
         preload={true}
+        fetchPriority="high"
         className="absolute inset-0 -z-10"
         objectFit="cover"
       />
@@ -79,6 +80,7 @@ export default function HeroSec() {
               { src: "/home/slider_2_el_2.png", media: "(min-width: 1024px)" },
             ]}
             preload={true}
+            fetchPriority="high"
             objectFit="contain"
             aria-hidden="true"
           />
@@ -91,6 +93,7 @@ export default function HeroSec() {
         alt="Top-left decorative shape"
         src="/home/slider_1_el_1.png"
         preload={true}
+        fetchPriority="high"
         className="absolute top-0 left-0 w-20 h-[50px] md:w-[120px] md:h-20 lg:w-[263px] lg:h-[174px]"
         aria-hidden="true"
       />
@@ -100,6 +103,7 @@ export default function HeroSec() {
         alt="Top-right decorative pattern"
         src="/home/main_slider_el_3.png"
         preload={true}
+        fetchPriority="high"
         className="hidden lg:block absolute top-0 right-0"
         aria-hidden="true"
       />
@@ -109,6 +113,7 @@ export default function HeroSec() {
         alt="Bottom-left decorative element"
         src="/home/slider_2_el_1.png"
         preload={true}
+        fetchPriority="high"
         className="hidden lg:block absolute bottom-0 left-0"
         aria-hidden="true"
       />
@@ -118,6 +123,7 @@ export default function HeroSec() {
         alt="Bottom-right decorative design"
         src="/home/main_slider_el_5.png"
         preload={true}
+        fetchPriority="high"
         className="hidden lg:block absolute bottom-0 right-0"
         aria-hidden="true"
       />
