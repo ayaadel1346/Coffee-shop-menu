@@ -41,6 +41,21 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+      <head>
+        <meta
+          name="description"
+          content="Your personal digital board for exploring, saving, and ordering your favorite coffee"
+        />
+        <meta name="keywords" content="coffee, menu, cafe, order coffee" />
+        <meta name="author" content="CafféLine" />
+        <meta property="og:title" content="CafféLine" />
+        <meta
+          property="og:description"
+          content="Your personal digital board for exploring your favorite coffee"
+        />
+        <meta property="og:type" content="website" />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
