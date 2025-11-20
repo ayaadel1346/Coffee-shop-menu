@@ -1,4 +1,3 @@
-import CategorySec from "@/components/homepage/category-sec/CategorySec";
 import CoffeeMenu from "@/components/homepage/CoffeeMenu";
 import DelightSec from "@/components/homepage/delight-sec/DelightSec";
 import Drinks from "@/components/homepage/drinks/Drinks";
@@ -8,6 +7,11 @@ import LoadingCategories from "@/components/loaders/loading-categories/LoadingCa
 import TitleDescBottonSec from "@/components/core/TitleDescBottonSec";
 import { useTranslations } from "next-intl";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const CategorySec = dynamic(
+  () => import("@/components/homepage/category-sec/CategorySec"),
+);
 
 export default function Home() {
   const tWelcome = useTranslations("Homepage.welcomeSec");
