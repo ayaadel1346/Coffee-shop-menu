@@ -1,7 +1,11 @@
 import LoadingCategories from "@/components/loaders/loading-categories/LoadingCategories";
 import HeroSec from "@/components/menu-by-category/Herosec";
-import MenuByCategory from "@/components/menu-by-category/MenuByCategory";
-import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const MenuByCategory = dynamic(
+  () => import("@/components/menu-by-category/MenuByCategory"),
+  { loading: () => <LoadingCategories /> },
+);
 
 export function generateStaticParams() {
   return [1, 2, 3, 4, 5, 6].map((id) => ({
@@ -32,9 +36,7 @@ export default async function Category({
   return (
     <>
       <HeroSec />
-      <Suspense fallback={<LoadingCategories />}>
-        <MenuByCategory categoryId={categoryId} />
-      </Suspense>
+      <MenuByCategory categoryId={categoryId} />
     </>
   );
 }

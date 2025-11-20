@@ -6,11 +6,11 @@ import LifeBegin from "@/components/homepage/life-begin/LifeBegin";
 import LoadingCategories from "@/components/loaders/loading-categories/LoadingCategories";
 import TitleDescBottonSec from "@/components/core/TitleDescBottonSec";
 import { useTranslations } from "next-intl";
-import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 const CategorySec = dynamic(
   () => import("@/components/homepage/category-sec/CategorySec"),
+  { loading: () => <LoadingCategories /> },
 );
 
 export default function Home() {
@@ -24,9 +24,7 @@ export default function Home() {
       />
       <DelightSec />
       <CoffeeMenu />
-      <Suspense fallback={<LoadingCategories />}>
-        <CategorySec />
-      </Suspense>
+      <CategorySec />
       <Drinks />
       <LifeBegin />
     </>
